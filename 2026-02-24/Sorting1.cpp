@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-const long MAXX = 1e6;
+const long MAXX = 1e5;
 long long a[MAXX +5];
 
 int main(){
@@ -10,29 +10,18 @@ int main(){
     long long n;
     cin >> n;
 
-    long long cntMAX = 0, MAX = 0;
+    string res = "YES";
     for (long long i = 0; i < n; ++i)
     {
         long long k;
         cin >> k;
         ++a[k];
 
-        if (a[k] > cntMAX)
-        {
-            cntMAX = a[k];
-            MAX = 1;
-        }
-
-        else if (a[k] == cntMAX)
-        {
-            cntMAX = a[k];
-            ++MAX;
-            //cout << MAX << " " << a[k] << " " << k << endl;
-        }
-
+        if (a[k] > 1) {res = "NO";}
     }
 
-    cout << cntMAX << " " << MAX;
+    cout << res;
+
 
     return 0;
 }
